@@ -19,6 +19,9 @@ function render() {
         let option = document.createElement("option");
         option.value = city.value;
         option.text = city.name;
+        if(city.name === 'Professzor') {
+            option.selected = true;
+        }
         selectmenu.appendChild(option);
     });
 }
