@@ -27,7 +27,7 @@ selectmenu.addEventListener("change", asd);
 function asd() {
     const selected = selectmenu.value;
     const demo = document.querySelector("#demo");
-    demo.textContent = selected;
+    demo.textContent = cities.find(city => city.value === selected).name;
     const image = document.querySelector("#image");
     const img = document.createElement("img");
     img.src = `https://raw.githubusercontent.com/dominik39293/webprog/refs/heads/main/2_DOMContentLoad_event/img/${selected.toLowerCase()}.jpg`;
