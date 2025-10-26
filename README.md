@@ -6,3 +6,4 @@
 - [4_hangulat](https://git.nexian.dev/4_hangulat/)
 
 - Hamarosan új dolgok kerülnek ide.
+- Fontos info! Ezek a projektek csak oraimunkak
