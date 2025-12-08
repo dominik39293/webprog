@@ -7,8 +7,8 @@
 - [5_mouseover_event](https://git.nexian.dev/5_mouseover_event/)
 - [6_topjoy](https://git.nexian.dev/6_topjoy/)
 - [7_topjoy_fetch](https://git.nexian.dev/7_topjoy_fetch/)
-- [8_topjoy_kepek_forgatasaval](https://git.nexian.dev/8_topjoy_kepek_forgatasaval/) [WIP]
-
+- [8_topjoy_kepek_forgatasaval](https://git.nexian.dev/8_topjoy_kepek_forgatasaval/)
+- [9_topjoy_kepek_forgatasaval_css](https://git.nexian.dev/9_topjoy_kepek_forgatasaval_css/)
 
 - Hamarosan új dolgok kerülnek ide.
 - Fontos info! Ezek a projektek csak oraimunkak
