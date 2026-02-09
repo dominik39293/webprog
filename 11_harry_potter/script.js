@@ -1,11 +1,11 @@
 const characters = document.querySelector("#characters");
 
-const uri = "https://raw.githubusercontent.com/Laboratoria/LIM011-data-lovers/master/src/data/potter/potter.json";
+const url = "https://raw.githubusercontent.com/Laboratoria/LIM011-data-lovers/master/src/data/potter/potter.json";
 
 
 const fetchCharacters = async() => {
     try {
-        const resp = await fetch(uri);
+        const resp = await fetch(url);
         const chars = await resp.json();
 
         displayChars(chars);
@@ -16,29 +16,34 @@ const fetchCharacters = async() => {
 
 const displayChars = (chars) => {
     chars.forEach(char => {
+        if(char.image === "" || char.name === "" || char.house === "" || !char.yearOfBirth || char.actor === "") return;
         const card = document.createElement("div");
         card.classList.add("card");
         const img = document.createElement("img");
-        img.src = char.image;
+        img.src = fixImgUrl(char.image);
         img.alt = char.name;
         card.appendChild(img);
-        const content = document.createElement("div");
-        content.classList.add("content");
-        const h3 = document.createElement("h3");
+        const h3 = document.createElement("div");
         h3.textContent = char.name;
-        content.appendChild(h3);
-        const p = document.createElement("p");
+        h3.classList.add("name");
+        card.appendChild(h3);
+        const p = document.createElement("div");
         p.textContent = `Ház: ${char.house}`;
-        content.appendChild(p);
-        const p2 = document.createElement("p");
+        card.appendChild(p);
+        const p2 = document.createElement("div");
         p2.textContent = `Születési év: ${char.yearOfBirth}`;
-        content.appendChild(p2);
-        const p3 = document.createElement("p");
+        card.appendChild(p2);
+        const p3 = document.createElement("div");
         p3.textContent = `Szinész: ${char.actor}`;
-        content.appendChild(p3);
-        card.appendChild(content);
+        card.appendChild(p3);
         characters.appendChild(card);
     })
+}
+
+function fixImgUrl(uri) {
+    if(!uri) return null;
+
+    return uri.replace("http://", "https://").replace("herokuapp.com", "onrender.com")
 }
 
 window.addEventListener("DOMContentLoaded", fetchCharacters);
