@@ -38,6 +38,7 @@ body {
     border-radius: 4px;
     overflow: hidden;
     background-color: white;
+    transition: transform 500ms ease, filter 500ms ease;
 }
 
 .image-container img {
@@ -71,4 +72,12 @@ body {
     .gallery-grid {
         grid-template-columns: 1fr;
     }
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
+.card:not(:hover) {
+    filter: grayscale(100%);
 }
