@@ -128,7 +128,7 @@ section p {
 
 .tag:hover {
     transform: scale(1.01);
-}
+}   
 
 footer {
     grid-area: foot;

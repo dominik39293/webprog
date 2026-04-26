@@ -1,0 +1,242 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(100deg, #0B1020, #111827);
+    color: #F3F4F6;
+    padding: 2rem;
+    min-height: 100vh;
+}
+
+.page-layout {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-areas: 
+        "nav"
+        "head"
+        "main"
+        "foot";
+    gap: 1.5rem;
+}
+
+nav.menu {
+    grid-area: nav;
+    background: #161B2E;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 1rem;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, 0.4);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2563EB;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 0.75rem;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #CBD5E1;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    background: #1E293B;
+    font-size: 0.9rem;
+    transition: 0.3s ease;
+}
+
+.nav-links li a:hover {
+    background: #2563EB;
+    color: white;
+}
+
+header.hero {
+    grid-area: head;
+    background: linear-gradient(90deg, #4F46E5, #7C3AED);
+    border-radius: 1rem;
+    padding: 3rem;
+    box-shadow: 0 .5rem 2rem rgba(0, 0, 0, 0.3);
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    max-width: 600px;
+    color: #E0E7FF;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.hero-btn {
+    display: inline-block;
+    background: #0F172A;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.2s;
+}
+
+.hero-btn:hover {
+    transform: scale(1.05);
+}
+
+.content-layout {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 1.5rem;
+}
+
+aside#sidebar {
+    background: #161B2E;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+aside h2 {
+    color: #60A5FA;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.side-menu {
+    list-style: none;
+}
+
+.side-menu li a {
+    display: block;
+    text-decoration: none;
+    color: #94A3B8;
+    background: #1E293B;
+    padding: 0.8rem 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+}
+
+.side-menu li a:hover {
+    background: #2D3A4F;
+    color: white;
+    padding-left: 1.2rem;
+}
+
+article#gallery-section {
+    background: #0F172A;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.article-head h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    grid-auto-rows: 180px;
+    gap: 1rem;
+}
+
+.card {
+    position: relative;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    background: #1E293B;
+    transition: transform 0.3s ease;
+}
+
+.card:nth-child(1) { grid-column: span 2; grid-row: span 2; }
+.card:nth-child(4) { grid-row: span 2; }
+
+.card:hover { transform: translateY(-5px); z-index: 10; }
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+}
+
+.card-info h3 {
+    font-size: 0.95rem;
+    margin-bottom: 0.4rem;
+}
+
+.tags {
+    display: flex;
+    gap: 0.4rem;
+}
+
+.tag-genre {
+    background: #2563EB;
+    font-size: 0.7rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+}
+
+.tag-age {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 0.7rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+}
+
+footer#footer {
+    grid-area: foot;
+    text-align: center;
+    background: #090D18;
+    color: #64748B;
+    padding: 2rem;
+    border-radius: 1rem;
+    font-size: 0.85rem;
+}
+
+@media (max-width: 1000px) {
+    .content-layout { grid-template-columns: 1fr; }
+    .page-layout { padding: 1rem; }
+}
+
+@media (max-width: 900px) {
+    .card:nth-child(1) { grid-column: span 2; grid-row: span 2; }
+    .content-layout { grid-template-columns: 2fr; }
+}
+
+@media (max-width: 700px) {
+        .content-layout { grid-template-columns: 1fr; }
+}
