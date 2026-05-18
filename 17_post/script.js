@@ -55,6 +55,7 @@ logBtn.addEventListener("click", async () => {
         headers: {
             "Content-Type": "application/json"
         },
+        credentials: "include",
         method: "POST"
     })
 
